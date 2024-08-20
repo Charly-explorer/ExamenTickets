@@ -125,13 +125,9 @@ public class FrmAtencion extends javax.swing.JInternalFrame {
                 tipo = Preferencial;
                 break;
         }
-        
-        if(tipo == null){
-            tipo = listaTicket.buscarPrimerTicket(); -------------------------
-        }
 
         ticketPantalla = listaTicket.buscarYElimina(tipo);
-
+        
         cargar();        
     }//GEN-LAST:event_jButton1ActionPerformed
 
