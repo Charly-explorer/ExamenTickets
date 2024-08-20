@@ -1,4 +1,4 @@
-package ListaTickets;
+    package ListaTickets;
 
 import Tickets.EnumTipo;
 import static Tickets.EnumTipo.Plataforma;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class ListaTicket {
 
-    private ArrayList<Ticket> listaTickets;
+    public ArrayList<Ticket> listaTickets;
 
     public static ListaTicket instance;
 
