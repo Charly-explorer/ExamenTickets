@@ -72,10 +72,10 @@ public class ListaTicket {
         return null;
     }
     
-    public Ticket buscarYElimina(Ticket tipo) { // Recibe un ticket pero busca por tipo y luego lo elimina de la lista
+    public Ticket buscarYElimina(EnumTipo tipo) { // Recibe un ticket pero busca por tipo y luego lo elimina de la lista
 
         for (Ticket ticket : listaTickets) {
-            if (ticket.getTipo().equals(tipo.getTipo())){
+            if (ticket.getTipo().equals(tipo)){
                 listaTickets.remove(ticket);
                 return ticket;
                 
