@@ -1,5 +1,6 @@
 package Interfaz;
 
+import static Interfaz.FrmPantalla.cargar;
 import ListaTickets.ListaTicket;
 import Tickets.EnumTipo;
 import Tickets.Ticket;
@@ -104,6 +105,7 @@ public class FrmAtencion extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ticketPantalla = listaTicket.buscarYElimina((EnumTipo) cbTipos.getSelectedItem());
+        cargar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
