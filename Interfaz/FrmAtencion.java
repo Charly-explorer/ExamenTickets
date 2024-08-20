@@ -3,20 +3,21 @@ package Interfaz;
 import static Interfaz.FrmPantalla.cargar;
 import ListaTickets.ListaTicket;
 import Tickets.EnumTipo;
+import static Tickets.EnumTipo.Plataforma;
 import Tickets.Ticket;
 
 public class FrmAtencion extends javax.swing.JInternalFrame {
-    
+
     ListaTicket listaTicket = ListaTicket.getInstance();
     public static Ticket ticketPantalla = new Ticket();
-    
+
     /**
      * Creates new form FrmAtencion
      */
     public FrmAtencion() {
         initComponents();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,7 +105,27 @@ public class FrmAtencion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ticketPantalla = listaTicket.buscarYElimina((EnumTipo) cbTipos.getSelectedItem());
+
+        String tipoSt = cbTipos.getSelectedItem().toString();
+        
+        EnumTipo tipo = null;
+        
+        switch (tipoSt) {
+            case "Plataforma":
+                tipo = Plataforma;
+                break;
+
+            case "Cajas":
+                tipo = Plataforma;
+                break;
+
+            case "Preferencial":
+                tipo = Plataforma;
+                break;
+        }
+
+        ticketPantalla = listaTicket.buscarYElimina(tipo);
+
         cargar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
