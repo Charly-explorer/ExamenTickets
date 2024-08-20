@@ -3,13 +3,15 @@ package Interfaz;
 import static Interfaz.FrmPantalla.cargar;
 import ListaTickets.ListaTicket;
 import Tickets.EnumTipo;
+import static Tickets.EnumTipo.Cajas;
 import static Tickets.EnumTipo.Plataforma;
+import static Tickets.EnumTipo.Preferencial;
 import Tickets.Ticket;
 
 public class FrmAtencion extends javax.swing.JInternalFrame {
 
     ListaTicket listaTicket = ListaTicket.getInstance();
-    public static Ticket ticketPantalla = new Ticket();
+    public static Ticket ticketPantalla;
 
     /**
      * Creates new form FrmAtencion
@@ -116,17 +118,21 @@ public class FrmAtencion extends javax.swing.JInternalFrame {
                 break;
 
             case "Cajas":
-                tipo = Plataforma;
+                tipo = Cajas;
                 break;
 
             case "Preferencial":
-                tipo = Plataforma;
+                tipo = Preferencial;
                 break;
+        }
+        
+        if(tipo == null){
+            tipo = listaTicket.buscarPrimerTicket(); -------------------------
         }
 
         ticketPantalla = listaTicket.buscarYElimina(tipo);
 
-        cargar();
+        cargar();        
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

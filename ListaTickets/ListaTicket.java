@@ -1,4 +1,4 @@
-    package ListaTickets;
+package ListaTickets;
 
 import Tickets.EnumTipo;
 import static Tickets.EnumTipo.Plataforma;
@@ -65,21 +65,29 @@ public class ListaTicket {
     public Ticket buscar(Ticket tipo) { // Recibe un ticket pero busca por tipo
 
         for (Ticket ticket : listaTickets) {
-            if (ticket.getTipo().equals(tipo.getTipo())){
+            if (ticket.getTipo().equals(tipo.getTipo())) {
                 return ticket;
             }
         }
         return null;
     }
-    
+
     public Ticket buscarYElimina(EnumTipo tipo) { // Recibe un ticket pero busca por tipo y luego lo elimina de la lista
 
         for (Ticket ticket : listaTickets) {
-            if (ticket.getTipo().equals(tipo)){
+            if (ticket.getTipo().equals(tipo)) {
                 listaTickets.remove(ticket);
                 return ticket;
-                
+
             }
+        }
+        return null;
+    }
+
+    public EnumTipo buscarPrimerTicket() {
+        for (Ticket ticket : listaTickets) {
+                listaTickets.remove(ticket);
+                return ticket.getTipo();
         }
         return null;
     }

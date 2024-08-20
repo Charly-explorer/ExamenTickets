@@ -14,9 +14,6 @@ public class FrmGenerar extends javax.swing.JInternalFrame {
         initComponents();
 
     }
-    private int contadorPlataforma = 0;
-    private int contadorCaja = 0;
-    private int contadorPreferencial = 0;
 
     /**
      * This method is called from within the constructor to initialize the form.
